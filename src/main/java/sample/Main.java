@@ -6,13 +6,18 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         try {
             FXMLLoader loader = new FXMLLoader();
-            Parent rootUIElement = loader.load(getClass().getResource("sample.fxml"));
+            Parent rootUIElement = loader.load(getClass().getClassLoader().getResource("sample.fxml"));
             primaryStage.setTitle("বাংলা সংবাদ");
             primaryStage.setScene(new Scene(rootUIElement));
             primaryStage.show();
